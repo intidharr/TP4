@@ -1,0 +1,21 @@
+﻿@model IEnumerable<String> ;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @{
+        foreach (String s in Model)
+        {
+                <a href="/Home/getCourse/@s">
+                    <li style>
+                       
+                        
+                                
+                    @s
+                      
+                    </li> 
+                </a>    
+        }
+    }
+</div>

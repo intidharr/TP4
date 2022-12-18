@@ -1,0 +1,47 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "Course ";
+}
+
+@{
+    if (ViewBag.NotFound == true)
+    {
+        <h2 class="alert alert-warning">There is no Student studying this course , please verify your infos </h2>
+
+    }
+    else
+    {
+        <h2>  @ViewBag.course</h2>
+
+
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-1 ">Id</div>
+                <div class="col-sm-1">First Name</div>
+                <div class="col-sm-1">Last Name </div>
+                <div class="col-sm-3">University</div>
+                <div class="col-sm-3">Phone Number</div>
+                <div class="col-sm-1">Time </div>
+            </div>
+        </div>
+
+        foreach (Student p in Model)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-1">@p.id </div>
+                    <div class="col-sm-1">@p.first_name</div>
+                    <div class="col-sm-1">@p.last_name</div>
+                    <div class="col-sm-3">@p.university</div>
+                    <div class="col-sm-3">@p.phone_number</div>
+                    <div class="col-sm-1">@p.timestamp</div>
+                </div>
+            </div>
+
+
+        }
+    }
+
+}
+<a asp-controller="Home" asp-action="index"> BACK </a>
+
